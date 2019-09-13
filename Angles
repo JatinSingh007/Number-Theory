@@ -1,0 +1,24 @@
+
+from math import gcd
+
+
+
+n,k = map(int,input().split())
+
+l1 = list(map(int,input().split()))
+
+l2 = list(map(int,input().split()))
+
+g = 0
+
+for i in l1:
+    g = gcd(g,i)
+
+for i in l2:
+
+   for j in range(361):
+     if (g*j)%360 == i:
+         print('YES')
+         break
+   else:
+       print('NO')
