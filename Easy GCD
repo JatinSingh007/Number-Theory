@@ -1,0 +1,49 @@
+# def solve1():
+from math import sqrt,gcd
+
+
+
+def solve1(x):
+    yo1 = set()
+
+
+
+    bo = x
+    for i in range(1,int(sqrt(x))+1):
+        if bo % i == 0:
+
+            yo1.add((bo//i))
+            if i!=1:
+              yo1.add((i))
+
+
+    return yo1
+
+
+
+
+
+
+
+from math import gcd
+
+n,k = map(int,input().split())
+
+l = list(map(int,input().split()))
+
+
+
+g = 0
+
+for i in l:
+    g = gcd(i,g)
+z = k//g * g
+maxi = 0
+
+s1 = solve1(g)
+for i in s1:
+    maxi = max(maxi,k//i*i)
+print(maxi)
+
+
+
