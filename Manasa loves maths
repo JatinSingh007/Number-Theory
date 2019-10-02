@@ -1,0 +1,97 @@
+
+def solve(n):
+    hash = defaultdict(int)
+    if set(n) == {'0'}:
+        return 'YES'
+
+    for i in n:
+
+        hash[i]+=1
+
+    flag = 0
+    for i in sa:
+        flag = 0
+        new_hash = defaultdict(int)
+        for j in str(i):
+            new_hash[j]+=1
+        for j in hash:
+            if new_hash[j]>hash[j] or new_hash[j]==0 or len(new_hash)!=len(hash):
+
+                # if i == 32:
+                #     print(new_hash,hash)
+
+
+                flag = 1
+                break
+
+        if flag == 0:
+
+            break
+
+    if flag == 0:
+        return 'YES'
+    else:
+        return 'NO'
+
+
+
+l  = []
+from collections import defaultdict
+i = 0
+sa = []
+while i<124:
+    z = i*8
+    l.append([])
+    for j in str(z):
+        l[i].append(j)
+    sa.append(z)
+    i+=1
+t = int(input())
+for i in l:
+    if len(i)<3:
+        while len(i)<3:
+            i.append('0')
+
+for _ in range(t):
+
+  n = list(input())
+  if n  == ['0']:
+      print('YES')
+      continue
+  hash = defaultdict(int)
+  new_hash = defaultdict(int)
+  if len(n) <=3:
+
+      z = solve(n)
+      print(z)
+
+
+
+
+  else:
+    big_flag = 0
+    for i in range(100,999):
+          la = list(str(i))
+          flag = 0
+          big_flag = 0
+          for j in la:
+              if n.count(j)<la.count(j):
+                  flag = 1
+                  break
+          if flag == 0:
+              
+              z = solve(la)
+              if z == 'YES':
+                  big_flag = 1
+                  break
+
+    if big_flag == 1:
+        print('YES')
+    else:
+        print('NO')
+
+
+
+
+  # print(l)
+
