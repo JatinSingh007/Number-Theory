@@ -1,0 +1,35 @@
+from bisect import bisect
+from collections import defaultdict
+# l = list(map(int,input().split()))
+# map(int,input().split()))
+from math import gcd,sqrt,ceil,inf
+from collections import Counter
+import sys
+sys.setrecursionlimit(1000000)
+from bisect import bisect
+from collections import defaultdict
+# l = list(map(int,input().split()))
+# map(int,input().split()))
+from math import gcd,sqrt,ceil,inf,factorial,log2
+from collections import Counter
+import sys
+sys.setrecursionlimit(10**9)
+
+n = 10**6+1
+seive = [1]*(n+1)
+# seive[1] = 1
+def solve():
+
+    for i in range(1,len(seive)):
+        k = 2
+        j = i*k
+
+
+
+        while j<len(seive):
+            # if i == 5:
+            #     print(j)
+            seive[j]+=1
+            k+=1
+            j = i*k
+solve()
